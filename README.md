@@ -1,77 +1,139 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+<p align="center">
+  <h3 align="center">Lotus Notes to IBM Cloud Object Storage Migration</h3>
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+  <p align="center">
+    This open source utility can migrate Lotus Notes Database(NSF) attachments to IBM Cloud Object Storage
+    <br />
+    <a href="https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration">Scope</a>
+    ·
+    <a href="https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration/issues">Request Feature</a>
+  </p>
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
 
-The purpose of this project is to provide a template for new open source repositories.
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+We all know that IBM is planning to discontinue with Lotus Notes very soon. There are many applications which runs on Lotus Notes and we must either sunset or migrate those applications to some other platform.
+For any migration project, the most critical question is – <b>“How you manage your existing Lotus Notes data?”</b>.<br /><br /> 
+Existing Lotus Notes applications can have very important and confidential information which you may require to migrate to new environment for storage, reference, compliance or audit purpose. Unfortunately, there are very less options available to migrate Lotus Notes data to Cloudant or MongoDB or IBM Cloud Object Storage. There are some 3rd party tools, but it’s not secure and there is a risk exposing or compromising confidential data. We need a solution which is secure, scalable, easier to understand and implement. And for that purpose, I have developed solutions which can help team to migrate data from Lotus Notes to other databases on Cloud.
+
+<b>IBM Cloud Object Storage</b> is the most suitable choice to store attachments. IBM Cloud® Object Storage makes it possible to store practically limitless amounts of data, simply and cost effectively. It is commonly used for data archiving and backup; for web and mobile applications; and as scalable, persistent storage for analytics. Flexible storage class tiers with a policy-based archive let you effectively manage costs while meeting data access needs. The integrated IBM Aspera® high-speed data transfer option makes it easy to transfer data to and from IBM Cloud Object Storage. Query-in-place functionality allows you to run analytics directly on your data.
+I have developed this solution to migrate attachments from Lotus Notes database to IBM Cloud Object Storage. This solution offers several benefits,
+
+1.	It’s easy to implement and it can be used with any IBM Notes database.
+2.	It’s based-on HTTP and REST, so it’s fast and secure.
+3.	Its written in Python which has excellent set of libraries to work with Data (Data Cleaning, Data Processing etc).
+4.	You can migrate any number of attachments of different file types (jpg, pdf, xlxs, docx, pptx, wmv etc).
+5.	There is no limitation on the attachment size. 
+6.	Most importantly, once you are out of IBM Notes it will give you lot of options and opportunities to scale your application using modern tools. You can implement DevOps, TDD, AI and many others (Opportunities are endless).
+
+### Built With
+
+* [Python](https://www.python.org/downloads/)
+* [Domino Access Service API](https://ds_infolib.hcltechsw.com/ldd/ddwiki.nsf/xpAPIViewer.xsp?lookupName=IBM+Domino+Access+Services+9.0.1#action=openDocument&content=catcontent&ct=api)
+* [IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+You need to install following Python packages
+* pip
+```sh
+pip install ibm-boto3
+pip install requests
+```
+You need to configure Domino Access Service API on your Domino server and database. Here are the instruction to setup and enable that, <br />
+[Instructions to setup and enable Domino Access Service API][documentation-file]
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration.git
+```
+2. Install Python packages
+```sh
+pip install
+```
+
+
+
+<!-- USAGE EXAMPLES -->
 ## Usage
 
-This repository contains some example best practices for open source repositories:
+please refer to the [Documentation][documentation-file]
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
 
-> These are optional
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+<!-- ROADMAP -->
+## Roadmap
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+See the [open issues](https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration/issues) for a list of proposed features (and known issues).
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+<!-- CONTRIBUTING -->
+## Contributing
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
 
+
+<!-- LICENSE -->
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
-## Authors
 
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
 
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
+<!-- CONTACT -->
+## Contact
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+Kirti Jha - kirtijha@in.ibm.com
+
+Project Link: [https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration](https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration)
+
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[documentation-file]: documentation/IBM%20Notes%20to%20MongoDB%20Migration.docx
