@@ -136,4 +136,4 @@ Project Link: [https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Migration]
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[documentation-file]: documentation/IBM%20Notes%20to%20MongoDB%20Migration.docx
+[documentation-file]: documentation/Lotus%20Notes%20to%20IBM%20Cloud%20Object%20Storage%20(COS)%20Migration.docx
